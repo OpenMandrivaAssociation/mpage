@@ -14,6 +14,7 @@ Patch21: mpage-psprint.patch
 Patch22: mpage-2.5.3-japanese-fix.patch
 
 URL: http://www.mesa.nl/pub/mpage
+BuildRoot: %{_tmppath}/%{name}-%{version}-root
 
 %description
 The mpage utility takes plain text files or PostScript(TM) documents
