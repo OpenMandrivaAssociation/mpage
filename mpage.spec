@@ -1,7 +1,7 @@
 Summary: A tool for printing multiple pages of text on each printed page
 Name: mpage
 Version: 2.5.6
-Release: %mkrel 1
+Release: %mkrel 2
 License: BSD
 Group: System/Printing
 Source: http://www.mesa.nl/pub/mpage/%name-%version.tgz
