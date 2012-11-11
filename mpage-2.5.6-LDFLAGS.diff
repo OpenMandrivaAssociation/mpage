@@ -1,0 +1,23 @@
+--- Makefile	2008-12-29 15:44:35.000000000 +0100
++++ Makefile.oden	2008-12-29 15:46:07.000000000 +0100
+@@ -128,6 +128,7 @@
+ # OS X (10.2.2):
+ #CFLAGS = -O2  $(DEFS) -Wall
+ 
++LDFLAGS=
+ 
+ ############################################################################
+ #
+@@ -150,10 +151,10 @@
+ 	@echo Done!
+ 
+ mpage$(E):	$(MOBJ)
+-	$(CC) $(CFLAGS) -o mpage$(E) $(MOBJ) $(LIBS)
++	$(CC) $(CFLAGS) $(LDFLAGS) -o mpage$(E) $(MOBJ) $(LIBS)
+ 
+ msample$(E):	$(SOBJ)
+-	$(CC) $(CFLAGS) -o msample$(E) $(SOBJ) $(LIBS)
++	$(CC) $(CFLAGS) $(LDFLAGS) -o msample$(E) $(SOBJ) $(LIBS)
+ 
+ mpage.1: mpage.1.in
+ 	sed 's:PREFIX:${PREFIX}:' < mpage.1.in > mpage.1

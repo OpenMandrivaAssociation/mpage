@@ -1,0 +1,25 @@
+diff -Naurp mpage-2.5.6/mpage.c mpage-2.5.6.oden/mpage.c
+--- mpage-2.5.6/mpage.c	2008-01-09 11:47:07.000000000 +0100
++++ mpage-2.5.6.oden/mpage.c	2008-12-29 15:42:37.000000000 +0100
+@@ -44,7 +44,8 @@ char **argv;
+     struct sheet *thesheet;
+     char outcommand[LINESIZE]; /* the command which is the output filter */
+ 
+-    current_locale = setlocale(LC_ALL,"");
++    setlocale(LC_ALL,"");
++    current_locale = setlocale(LC_ALL,NULL);
+ 
+    
+ #ifdef __EMX__
+diff -Naurp mpage-2.5.6/text.c mpage-2.5.6.oden/text.c
+--- mpage-2.5.6/text.c	2004-05-30 21:35:04.000000000 +0200
++++ mpage-2.5.6.oden/text.c	2008-12-29 15:42:37.000000000 +0100
+@@ -465,7 +465,7 @@ mp_get_text(infile, locp, asheet, kp)
+ 	    }
+ 	} else {
+ #ifdef KANJI
+-        if (current_locale && !strncmp(current_locale,"ja_JP",5)) {
++        if (current_locale && !strncmp(current_locale,"ja",2)) {
+             if (prevkanj) {
+                 *kp = prevkanj;
+                 if (prevkanj >= 0x0100)
