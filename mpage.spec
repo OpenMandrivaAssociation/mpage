@@ -27,7 +27,7 @@ long text documents without wasting paper.
 
 %prep
 %setup -q
-%apply_patches
+%autopatch -p1
 
 %build
 %make RPM_OPT_FLAGS="%{optflags}" LDFLAGS="%{ldflags}"
