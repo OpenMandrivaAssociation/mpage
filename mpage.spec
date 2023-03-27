@@ -1,7 +1,12 @@
+%ifnarch %{riscv}
+# (tpg) optimize it a bit
+%global optflags %{optflags} -Oz --rtlib=compiler-rt
+%endif
+
 Summary:	A tool for printing multiple pages of text on each printed page
 Name:		mpage
 Version:	2.5.7
-Release:	1
+Release:	2
 License:	BSD
 Group:		System/Printing
 Url:		http://www.mesa.nl/pub/mpage
@@ -26,19 +31,17 @@ Mpage should be installed if you need a useful utility for viewing
 long text documents without wasting paper.
 
 %prep
-%setup -q
-%autopatch -p1
+%autosetup -p1
 
 %build
-%make RPM_OPT_FLAGS="%{optflags}" LDFLAGS="%{ldflags}"
+%make_build CC=%{__cc} RPM_OPT_FLAGS="%{optflags}" LDFLAGS="%{build_ldflags}"
 
 %install
-%makeinstall_std
+%make_install
 
 %files
 %doc CHANGES Copyright README NEWS TODO
 %{_bindir}/mpage
-%{_mandir}/man1/mpage.1*
+%doc %{_mandir}/man1/mpage.1*
 %dir %{_datadir}/mpage
 %{_datadir}/mpage/*
-
