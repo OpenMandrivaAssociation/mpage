@@ -9,7 +9,7 @@ Version:	2.5.8
 Release:	1
 License:	BSD
 Group:		System/Printing
-Url:		http://www.mesa.nl/pub/mpage
+Url:		https://www.mesa.nl/pub/mpage
 Source0:	http://www.mesa.nl/pub/mpage/%{name}-%{version}.tgz
 Patch0:		mpage-2.5.4-config.patch
 # Japanese patch.bz2
