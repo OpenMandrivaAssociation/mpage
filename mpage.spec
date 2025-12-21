@@ -19,6 +19,7 @@ Patch21:	mpage-psprint.patch
 Patch22:	mpage-2.5.3-japanese-fix.patch
 Patch23:	mpage-2.5.6-LDFLAGS.diff
 
+BuildRequires:	make
 %description
 The mpage utility takes plain text files or PostScript(TM) documents
 as input, reduces the size of the text, and prints the files on a
